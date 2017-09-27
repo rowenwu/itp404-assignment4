@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search History</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.concisecss.com/concise-utils/concise-utils.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">        
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    
+    <body>
+
+        <div class="container" id="container">
+                <div class="row _mbm _mts">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <textarea id="search-bar" class="search-bar _mbxs"></textarea>
+                        
+                        <button id="search-button" class="btn btn-primary">Search</button> 
+                        <div id="repo-list"></div>                        
+                    </div>
+                    <div class="col-md-4 ml-auto mr-auto" id="search-history"></div>   
+                </div> 
+             
+        </div>
+        
+                
+        <template id="repos-template">
+            <h3>Repos</h3>
+            {{#each repos}}
+                <div class="repo">
+                <p>{{name}}</p>
+                </div>
+            {{/each}}
+        </template>      
+        
+        
+        <template id="searches-template">
+        {{#each searches}}
+            <div class="search-term">
+            <p>{{createdAt}}</p>
+            <p>{{term}}</p>
+            </div>
+        {{/each}}
+        </template>   
+        
+
+    </body>
+    <script src="src/jquery-3.2.1.js"></script>
+    <script src="src/handlebars-v4.0.10.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>    
+    <script src="src/main.js"></script>
+</html>
